@@ -31,7 +31,7 @@ const navItems = [
 ];
 
 export function StudentSidebar() {
-  const { collapsed } = useSidebar();
+  const { state } = useSidebar();
   const location = useLocation();
   const currentPath = location.pathname;
   
@@ -42,33 +42,29 @@ export function StudentSidebar() {
   // Helper for active route styling
   const getNavClass = ({ isActive }: { isActive: boolean }) =>
     isActive 
-      ? "bg-sidebar-accent text-primary font-medium" 
-      : "hover:bg-sidebar-accent/50 transition-colors duration-200";
+      ? "bg-slate-800 text-primary font-medium" 
+      : "hover:bg-slate-800/50 text-slate-300 transition-colors duration-200";
 
   return (
     <Sidebar
-      className={`border-r transition-all duration-300 ${
-        collapsed ? "w-14" : "w-64"
-      }`}
-      collapsible
+      className="border-r border-slate-700/30 transition-all duration-300 bg-slate-900 text-white w-64 data-[state=collapsed]:w-14"
+      collapsible="icon"
     >
       <SidebarTrigger className="m-2 self-end" />
 
       <div className="flex items-center justify-center py-4">
-        {!collapsed ? (
-          <h2 className="text-xl font-bold text-primary">Student Portal</h2>
+        {state !== "collapsed" ? (
+          <h2 className="text-xl font-bold text-primary">EduTrack</h2>
         ) : (
           <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">
-            S
+            E
           </div>
         )}
       </div>
 
       <SidebarContent>
-        <SidebarGroup
-          defaultOpen={true}
-        >
-          <SidebarGroupLabel>Menu</SidebarGroupLabel>
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-slate-400">Menu</SidebarGroupLabel>
 
           <SidebarGroupContent>
             <SidebarMenu>
@@ -81,7 +77,7 @@ export function StudentSidebar() {
                       className={`flex items-center p-2 rounded-md ${getNavClass}`}
                     >
                       <item.icon className="h-5 w-5" />
-                      {!collapsed && <span className="ml-3">{item.title}</span>}
+                      {state !== "collapsed" && <span className="ml-3">{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -90,6 +86,10 @@ export function StudentSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      
+      <div className="mt-auto p-4 border-t border-slate-700/30 text-xs text-slate-500">
+        <p>EduTrack v1.0</p>
+      </div>
     </Sidebar>
   );
 }

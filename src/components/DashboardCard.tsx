@@ -7,18 +7,45 @@ interface DashboardCardProps {
   title: string;
   icon?: ReactNode;
   className?: string;
-  children: ReactNode;
+  value?: string | number;
+  subtitle?: string;
+  trend?: {
+    value: string;
+    positive?: boolean;
+  };
+  children?: ReactNode;
 }
 
-export function DashboardCard({ title, icon, className, children }: DashboardCardProps) {
+export function DashboardCard({ 
+  title, 
+  icon, 
+  className, 
+  value,
+  subtitle,
+  trend,
+  children 
+}: DashboardCardProps) {
   return (
-    <Card className={cn("overflow-hidden", className)}>
+    <Card className={cn("overflow-hidden bg-slate-800/80 border-slate-700/30 text-white", className)}>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        {icon && <div className="h-4 w-4 text-muted-foreground">{icon}</div>}
+        <CardTitle className="text-sm font-medium text-slate-300">{title}</CardTitle>
+        {icon && <div className="h-8 w-8 rounded-full flex items-center justify-center bg-slate-700/50 text-primary">{icon}</div>}
       </CardHeader>
       <CardContent>
-        {children}
+        {(value || subtitle) ? (
+          <div>
+            {value && <div className="text-3xl font-bold">{value}</div>}
+            {subtitle && <p className="text-xs text-slate-400">{subtitle}</p>}
+            {trend && (
+              <div className={cn(
+                "text-xs mt-2",
+                trend.positive ? "text-emerald-400" : "text-rose-400"
+              )}>
+                {trend.value}
+              </div>
+            )}
+          </div>
+        ) : children}
       </CardContent>
     </Card>
   );

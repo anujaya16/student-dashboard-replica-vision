@@ -22,28 +22,28 @@ export function CourseCard({
   category
 }: CourseCardProps) {
   return (
-    <Card className="overflow-hidden hover:shadow-md transition-all duration-200">
+    <Card className="overflow-hidden hover:shadow-md transition-all duration-200 bg-slate-800/80 border-slate-700/30 text-white">
       <div className="aspect-video relative overflow-hidden">
         <img
           src={coverImage}
           alt={title}
           className="object-cover w-full h-full"
         />
-        <Badge className="absolute top-2 right-2">{category}</Badge>
+        <Badge className="absolute top-2 right-2 bg-primary/80 text-white hover:bg-primary">{category}</Badge>
       </div>
       <CardHeader className="p-4">
-        <h3 className="font-semibold text-lg line-clamp-1">{title}</h3>
-        <p className="text-sm text-muted-foreground">by {instructor}</p>
+        <h3 className="font-semibold text-lg line-clamp-1 text-white">{title}</h3>
+        <p className="text-sm text-slate-400">by {instructor}</p>
       </CardHeader>
       <CardContent className="p-4 pt-0">
         <div className="flex items-center justify-between text-sm mb-1">
-          <span>Progress</span>
-          <span className="font-medium">{progress}%</span>
+          <span className="text-slate-400">Progress</span>
+          <span className="font-medium text-white">{progress}%</span>
         </div>
-        <Progress value={progress} className="h-2" />
+        <Progress value={progress} className="h-2 bg-slate-700" indicatorClassName="bg-primary" />
       </CardContent>
       <CardFooter className="p-4 pt-0">
-        <Button className="w-full" size="sm">Continue Learning</Button>
+        <Button className="w-full bg-primary hover:bg-primary/80 text-white" size="sm">Continue Learning</Button>
       </CardFooter>
     </Card>
   );

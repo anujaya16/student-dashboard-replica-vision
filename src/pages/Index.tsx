@@ -11,7 +11,10 @@ import {
   BookOpen, 
   GraduationCap, 
   Award, 
-  CalendarDays 
+  CalendarDays,
+  Users,
+  TrendingUp,
+  AlertTriangle
 } from "lucide-react";
 
 const Index = () => {
@@ -42,42 +45,57 @@ const Index = () => {
   }, []);
 
   return (
-    <SidebarProvider collapsedWidth={56}>
-      <div className="flex h-screen w-full">
+    <SidebarProvider>
+      <div className="flex h-screen w-full bg-slate-900 text-white">
         <StudentSidebar />
         
         <div className="flex flex-col flex-1 overflow-hidden">
           <StudentHeader />
           
-          <main className="flex-1 overflow-y-auto p-6 bg-gray-50">
+          <main className="flex-1 overflow-y-auto p-6 bg-slate-900">
             <div className="max-w-7xl mx-auto">
-              <h1 className="text-2xl font-bold mb-6">Student Dashboard</h1>
+              <div className="mb-6">
+                <h1 className="text-2xl font-bold mb-1">Overview</h1>
+                <p className="text-slate-400 text-sm">Welcome to your student performance dashboard</p>
+              </div>
               
               <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-6">
-                <DashboardCard title="Enrolled Courses" icon={<BookOpen />}>
-                  <div className="text-3xl font-bold">7</div>
-                  <p className="text-xs text-muted-foreground">2 in progress</p>
-                </DashboardCard>
+                <DashboardCard 
+                  title="Enrolled Courses" 
+                  icon={<BookOpen />}
+                  value="7"
+                  subtitle="2 in progress"
+                />
                 
-                <DashboardCard title="Learning Hours" icon={<GraduationCap />}>
-                  <div className="text-3xl font-bold">124</div>
-                  <p className="text-xs text-muted-foreground">+12 this week</p>
-                </DashboardCard>
+                <DashboardCard 
+                  title="Learning Hours" 
+                  icon={<GraduationCap />}
+                  value="124"
+                  subtitle="+12 this week"
+                  trend={{
+                    value: "+4.5% from last month",
+                    positive: true
+                  }}
+                />
                 
-                <DashboardCard title="Certificates" icon={<Award />}>
-                  <div className="text-3xl font-bold">3</div>
-                  <p className="text-xs text-muted-foreground">1 pending</p>
-                </DashboardCard>
+                <DashboardCard 
+                  title="Certificates" 
+                  icon={<Award />}
+                  value="3"
+                  subtitle="1 pending"
+                />
                 
-                <DashboardCard title="Upcoming Exams" icon={<CalendarDays />}>
-                  <div className="text-3xl font-bold">2</div>
-                  <p className="text-xs text-muted-foreground">Next in 3 days</p>
-                </DashboardCard>
+                <DashboardCard 
+                  title="Upcoming Exams" 
+                  icon={<CalendarDays />}
+                  value="2"
+                  subtitle="Next in 3 days"
+                />
               </div>
               
               <div className="grid gap-6 grid-cols-1 lg:grid-cols-3 mb-6">
                 <div className="lg:col-span-2">
-                  <h2 className="text-xl font-semibold mb-4">Continue Learning</h2>
+                  <h2 className="text-xl font-semibold mb-4 text-white">Continue Learning</h2>
                   <div className="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
                     {courses.map((course) => (
                       <CourseCard key={course.id} {...course} />
@@ -86,15 +104,21 @@ const Index = () => {
                 </div>
                 
                 <div>
-                  <AssignmentList assignments={assignments} />
+                  <h2 className="text-xl font-semibold mb-4 text-white">Upcoming Assignments</h2>
+                  <div className="bg-slate-800/80 border border-slate-700/30 rounded-lg overflow-hidden">
+                    <AssignmentList assignments={assignments} />
+                  </div>
                 </div>
               </div>
               
               <div className="mb-6">
-                <ScheduleView 
-                  date={new Date()} 
-                  items={scheduleItems}
-                />
+                <h2 className="text-xl font-semibold mb-4 text-white">Today's Schedule</h2>
+                <div className="bg-slate-800/80 border border-slate-700/30 rounded-lg overflow-hidden">
+                  <ScheduleView 
+                    date={new Date()} 
+                    items={scheduleItems}
+                  />
+                </div>
               </div>
             </div>
           </main>
