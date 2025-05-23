@@ -26,16 +26,16 @@ export function DashboardCard({
   children 
 }: DashboardCardProps) {
   return (
-    <Card className={cn("overflow-hidden bg-slate-800/80 border-slate-700/30 text-white", className)}>
+    <Card className={cn("overflow-hidden bg-gray-800 border-gray-700 text-white", className)}>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium text-slate-300">{title}</CardTitle>
-        {icon && <div className="h-8 w-8 rounded-full flex items-center justify-center bg-slate-700/50 text-primary">{icon}</div>}
+        <CardTitle className="text-sm font-medium text-gray-300">{title}</CardTitle>
+        {icon && <div className="h-8 w-8 rounded-full flex items-center justify-center bg-gray-700 text-purple-400">{icon}</div>}
       </CardHeader>
       <CardContent>
         {(value || subtitle) ? (
           <div>
-            {value && <div className="text-3xl font-bold">{value}</div>}
-            {subtitle && <p className="text-xs text-slate-400">{subtitle}</p>}
+            {value && <div className="text-3xl font-bold text-white">{value}</div>}
+            {subtitle && <p className="text-xs text-gray-400">{subtitle}</p>}
             {trend && (
               <div className={cn(
                 "text-xs mt-2",
