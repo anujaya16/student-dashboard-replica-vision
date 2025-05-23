@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import StudentSidebar from "@/components/StudentSidebar";
@@ -85,15 +84,15 @@ const Assignments = () => {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full">
+      <div className="flex h-screen w-full bg-slate-900">
         <StudentSidebar />
         
-        <div className="flex flex-col flex-1 overflow-hidden">
+        <div className="flex flex-col flex-1 bg-slate-900 overflow-hidden">
           <StudentHeader />
           
-          <main className="flex-1 overflow-y-auto p-6 bg-gray-50">
+          <main className="flex-1 overflow-y-auto p-6 bg-slate-900">
             <div className="max-w-7xl mx-auto">
-              <h1 className="text-2xl font-bold mb-6">My Assignments</h1>
+              <h1 className="text-2xl font-bold mb-6 text-white">My Assignments</h1>
               
               <Tabs defaultValue="upcoming" className="w-full">
                 <TabsList>
@@ -102,7 +101,7 @@ const Assignments = () => {
                 </TabsList>
                 
                 <TabsContent value="upcoming" className="mt-4">
-                  <div className="bg-white rounded-lg border">
+                  <div className="bg-slate-800 rounded-lg border border-slate-700">
                     <Table>
                       <TableHeader>
                         <TableRow>
@@ -150,7 +149,7 @@ const Assignments = () => {
                 </TabsContent>
                 
                 <TabsContent value="completed" className="mt-4">
-                  <div className="bg-white rounded-lg border">
+                  <div className="bg-slate-800 rounded-lg border border-slate-700">
                     <Table>
                       <TableHeader>
                         <TableRow>

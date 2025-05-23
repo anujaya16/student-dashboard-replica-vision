@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,7 +36,7 @@
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 0 0% 98%; /* almost white */
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 255 70% 75%;
     --sidebar-primary-foreground: 0 0% 98%;
@@ -76,7 +75,7 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
     
-    --sidebar-background: 240 5.9% 10%;
+    --sidebar-background: 222.2 84% 4.9%; /* dark */
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 255 70% 75%;
     --sidebar-primary-foreground: 0 0% 100%;

@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import StudentSidebar from "@/components/StudentSidebar";
@@ -34,13 +33,13 @@ const Courses = () => {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full">
+      <div className="flex h-screen w-full bg-slate-900 text-white">
         <StudentSidebar />
         
         <div className="flex flex-col flex-1 overflow-hidden">
           <StudentHeader />
           
-          <main className="flex-1 overflow-y-auto p-6 bg-gray-50">
+          <main className="flex-1 overflow-y-auto p-6 bg-slate-900">
             <div className="max-w-7xl mx-auto">
               <h1 className="text-2xl font-bold mb-6">My Courses</h1>
               

@@ -1,4 +1,3 @@
-
 import { NavLink, useLocation } from "react-router-dom";
 import {
   Sidebar,
@@ -34,20 +33,16 @@ export function StudentSidebar() {
   const { state } = useSidebar();
   const location = useLocation();
   const currentPath = location.pathname;
-  
-  // Helper function to determine if a group should be expanded
-  const isGroupExpanded = (paths: string[]) => 
-    paths.some(path => currentPath.startsWith(path));
 
   // Helper for active route styling
   const getNavClass = ({ isActive }: { isActive: boolean }) =>
     isActive 
-      ? "bg-slate-800 text-primary font-medium" 
+      ? "bg-slate-800 text-primary font-medium"
       : "hover:bg-slate-800/50 text-slate-300 transition-colors duration-200";
 
   return (
     <Sidebar
-      className="border-r border-slate-700/30 transition-all duration-300 bg-slate-900 text-white w-64 data-[state=collapsed]:w-14"
+      className="border-r border-slate-700 transition-all duration-300 bg-slate-900 text-white w-64 data-[state=collapsed]:w-14"
       collapsible="icon"
     >
       <SidebarTrigger className="m-2 self-end" />
@@ -65,7 +60,6 @@ export function StudentSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="text-slate-400">Menu</SidebarGroupLabel>
-
           <SidebarGroupContent>
             <SidebarMenu>
               {navItems.map((item) => (
@@ -87,7 +81,7 @@ export function StudentSidebar() {
         </SidebarGroup>
       </SidebarContent>
       
-      <div className="mt-auto p-4 border-t border-slate-700/30 text-xs text-slate-500">
+      <div className="mt-auto p-4 border-t border-slate-700 text-xs text-slate-400">
         <p>EduTrack v1.0</p>
       </div>
     </Sidebar>

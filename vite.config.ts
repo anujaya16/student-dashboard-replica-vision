@@ -11,9 +11,10 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
+    //mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
+  base : "/student-dashboard-replica-vision",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
