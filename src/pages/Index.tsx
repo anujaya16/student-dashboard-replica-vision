@@ -87,17 +87,17 @@ const Index = () => {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full bg-gray-900 text-white">
+      <div className="flex h-screen w-full bg-slate-900 text-white">
         <StudentSidebar />
         
         <div className="flex flex-col flex-1 overflow-hidden">
           <StudentHeader />
           
-          <main className="flex-1 overflow-y-auto p-6 bg-gray-900">
+          <main className="flex-1 overflow-y-auto p-6 bg-slate-900">
             <div className="max-w-7xl mx-auto">
               <div className="mb-6">
-                <h1 className="text-2xl font-bold mb-1 text-white">Overview</h1>
-                <p className="text-gray-400 text-sm">Welcome to your student performance dashboard</p>
+                <h1 className="text-2xl font-bold mb-1">Overview</h1>
+                <p className="text-slate-400 text-sm">Welcome to your student performance dashboard</p>
               </div>
               
               <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-6">
@@ -143,7 +143,7 @@ const Index = () => {
               </div>
               
               <div className="grid gap-6 grid-cols-1 lg:grid-cols-3 mb-6">
-                <div className="lg:col-span-2 bg-gray-800 border border-gray-700 rounded-lg p-6">
+                <div className="lg:col-span-2 bg-slate-800/50 border border-slate-700/30 rounded-lg p-6">
                   <h2 className="text-xl font-semibold mb-4 text-white">Performance Prediction Trend</h2>
                   <div className="h-[300px] w-full">
                     <ResponsiveContainer width="100%" height="100%">
@@ -161,15 +161,15 @@ const Index = () => {
                             <stop offset="95%" stopColor="#10b981" stopOpacity={0.1}/>
                           </linearGradient>
                         </defs>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                        <XAxis dataKey="month" stroke="#9ca3af" />
-                        <YAxis domain={[0, 100]} stroke="#9ca3af" />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+                        <XAxis dataKey="month" stroke="#94a3b8" />
+                        <YAxis domain={[0, 100]} stroke="#94a3b8" />
                         <Tooltip 
                           contentStyle={{ 
-                            backgroundColor: '#1f2937', 
-                            border: '1px solid #374151',
+                            backgroundColor: '#1e293b', 
+                            border: '1px solid #475569',
                             borderRadius: '6px',
-                            color: '#f9fafb'
+                            color: '#f8fafc'
                           }}
                         />
                         <Legend />
@@ -194,18 +194,18 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                <div className="bg-slate-800/50 border border-slate-700/30 rounded-lg p-6">
                   <h2 className="text-xl font-semibold mb-4 text-white">Prediction Factors</h2>
                   <div className="space-y-5">
                     {predictionFactors.map((factor, index) => (
                       <div key={index} className="space-y-1">
                         <div className="flex justify-between text-sm">
-                          <span className="text-gray-400">{factor.factor}</span>
+                          <span className="text-slate-400">{factor.factor}</span>
                           <span className="text-white">{factor.value}%</span>
                         </div>
-                        <div className="h-2 bg-gray-700 rounded-full w-full relative">
+                        <div className="h-2 bg-slate-700 rounded-full w-full relative">
                           <div 
-                            className="absolute top-0 left-0 h-full rounded-full bg-purple-500"
+                            className="absolute top-0 left-0 h-full rounded-full bg-primary"
                             style={{ width: `${factor.value}%` }}
                           />
                         </div>
@@ -228,9 +228,9 @@ const Index = () => {
                 <div>
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl font-semibold text-white">Recent Activities</h2>
-                    <a href="#" className="text-purple-400 text-sm hover:underline">View all</a>
+                    <a href="#" className="text-primary text-sm hover:underline">View all</a>
                   </div>
-                  <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden p-4 space-y-5">
+                  <div className="bg-slate-800/80 border border-slate-700/30 rounded-lg overflow-hidden p-4 space-y-5">
                     {recentActivities.map((activity) => (
                       <div key={activity.id} className="flex items-start gap-3">
                         <div className={`rounded-full p-1.5 mt-0.5 ${activity.status === 'success' ? 'bg-emerald-400/20 text-emerald-400' : 'bg-amber-400/20 text-amber-400'}`}>
@@ -243,8 +243,8 @@ const Index = () => {
                         </div>
                         <div className="space-y-1">
                           <h4 className="text-white font-medium">{activity.title}</h4>
-                          <p className="text-gray-400 text-sm">{activity.description}</p>
-                          <p className="text-xs text-gray-500">{activity.time}</p>
+                          <p className="text-slate-400 text-sm">{activity.description}</p>
+                          <p className="text-xs text-slate-500">{activity.time}</p>
                         </div>
                       </div>
                     ))}
@@ -254,7 +254,7 @@ const Index = () => {
               
               <div className="mb-6">
                 <h2 className="text-xl font-semibold mb-4 text-white">Today's Schedule</h2>
-                <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+                <div className="bg-slate-800/80 border border-slate-700/30 rounded-lg overflow-hidden">
                   <ScheduleView 
                     date={new Date()} 
                     items={scheduleItems}

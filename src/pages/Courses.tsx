@@ -29,30 +29,30 @@ const Courses = () => {
   const completedCourses = allCourses.filter(course => course.progress === 100);
 
   useEffect(() => {
-    document.title = "Courses | EduTrack";
+    document.title = "Courses | Student Dashboard";
   }, []);
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full bg-gray-900 text-white">
+      <div className="flex h-screen w-full">
         <StudentSidebar />
         
         <div className="flex flex-col flex-1 overflow-hidden">
           <StudentHeader />
           
-          <main className="flex-1 overflow-y-auto p-6 bg-gray-900">
+          <main className="flex-1 overflow-y-auto p-6 bg-gray-50">
             <div className="max-w-7xl mx-auto">
-              <h1 className="text-2xl font-bold mb-6 text-white">My Courses</h1>
+              <h1 className="text-2xl font-bold mb-6">My Courses</h1>
               
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 space-y-4 md:space-y-0">
                 <Tabs defaultValue="all" className="w-full md:w-auto">
-                  <TabsList className="bg-gray-800 text-gray-300">
-                    <TabsTrigger value="all" className="data-[state=active]:bg-primary data-[state=active]:text-white">All Courses</TabsTrigger>
-                    <TabsTrigger value="in-progress" className="data-[state=active]:bg-primary data-[state=active]:text-white">In Progress</TabsTrigger>
-                    <TabsTrigger value="completed" className="data-[state=active]:bg-primary data-[state=active]:text-white">Completed</TabsTrigger>
+                  <TabsList>
+                    <TabsTrigger value="all">All Courses</TabsTrigger>
+                    <TabsTrigger value="in-progress">In Progress</TabsTrigger>
+                    <TabsTrigger value="completed">Completed</TabsTrigger>
                   </TabsList>
                 
-                  <TabsContent value="all" className="mt-6">
+                  <TabsContent value="all" className="mt-0">
                     <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                       {allCourses.map((course) => (
                         <CourseCard key={course.id} {...course} />
@@ -60,7 +60,7 @@ const Courses = () => {
                     </div>
                   </TabsContent>
                   
-                  <TabsContent value="in-progress" className="mt-6">
+                  <TabsContent value="in-progress" className="mt-0">
                     <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                       {inProgressCourses.map((course) => (
                         <CourseCard key={course.id} {...course} />
@@ -68,7 +68,7 @@ const Courses = () => {
                     </div>
                   </TabsContent>
                   
-                  <TabsContent value="completed" className="mt-6">
+                  <TabsContent value="completed" className="mt-0">
                     <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                       {completedCourses.map((course) => (
                         <CourseCard key={course.id} {...course} />
@@ -79,11 +79,11 @@ const Courses = () => {
                 
                 <div className="flex w-full md:w-auto">
                   <div className="relative flex-1 md:flex-auto">
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" />
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                     <Input 
                       type="search" 
                       placeholder="Search courses..." 
-                      className="pl-8 w-full md:w-[250px] bg-gray-800 border-gray-700 text-white"
+                      className="pl-8 w-full md:w-[250px]"
                     />
                   </div>
                 </div>
