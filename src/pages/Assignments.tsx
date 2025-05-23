@@ -84,7 +84,7 @@ const Assignments = () => {
   }, []);
 
   return (
-    <SidebarProvider collapsedWidth={56}>
+    <SidebarProvider>
       <div className="flex h-screen w-full">
         <StudentSidebar />
         

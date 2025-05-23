@@ -40,7 +40,7 @@ export function CourseCard({
           <span className="text-slate-400">Progress</span>
           <span className="font-medium text-white">{progress}%</span>
         </div>
-        <Progress value={progress} className="h-2 bg-slate-700" indicatorClassName="bg-primary" />
+        <Progress value={progress} className="h-2 bg-slate-700" />
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button className="w-full bg-primary hover:bg-primary/80 text-white" size="sm">Continue Learning</Button>

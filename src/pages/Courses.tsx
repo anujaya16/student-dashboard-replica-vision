@@ -33,7 +33,7 @@ const Courses = () => {
   }, []);
 
   return (
-    <SidebarProvider collapsedWidth={56}>
+    <SidebarProvider>
       <div className="flex h-screen w-full">
         <StudentSidebar />
         
@@ -51,6 +51,30 @@ const Courses = () => {
                     <TabsTrigger value="in-progress">In Progress</TabsTrigger>
                     <TabsTrigger value="completed">Completed</TabsTrigger>
                   </TabsList>
+                
+                  <TabsContent value="all" className="mt-0">
+                    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                      {allCourses.map((course) => (
+                        <CourseCard key={course.id} {...course} />
+                      ))}
+                    </div>
+                  </TabsContent>
+                  
+                  <TabsContent value="in-progress" className="mt-0">
+                    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                      {inProgressCourses.map((course) => (
+                        <CourseCard key={course.id} {...course} />
+                      ))}
+                    </div>
+                  </TabsContent>
+                  
+                  <TabsContent value="completed" className="mt-0">
+                    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                      {completedCourses.map((course) => (
+                        <CourseCard key={course.id} {...course} />
+                      ))}
+                    </div>
+                  </TabsContent>
                 </Tabs>
                 
                 <div className="flex w-full md:w-auto">
@@ -63,32 +87,6 @@ const Courses = () => {
                     />
                   </div>
                 </div>
-              </div>
-              
-              <div>
-                <TabsContent value="all" className="mt-0">
-                  <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    {allCourses.map((course) => (
-                      <CourseCard key={course.id} {...course} />
-                    ))}
-                  </div>
-                </TabsContent>
-                
-                <TabsContent value="in-progress" className="mt-0">
-                  <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    {inProgressCourses.map((course) => (
-                      <CourseCard key={course.id} {...course} />
-                    ))}
-                  </div>
-                </TabsContent>
-                
-                <TabsContent value="completed" className="mt-0">
-                  <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    {completedCourses.map((course) => (
-                      <CourseCard key={course.id} {...course} />
-                    ))}
-                  </div>
-                </TabsContent>
               </div>
             </div>
           </main>

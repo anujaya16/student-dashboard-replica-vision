@@ -31,7 +31,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <SidebarProvider collapsedWidth={56}>
+    <SidebarProvider>
       <div className="flex h-screen w-full">
         <StudentSidebar />
         
