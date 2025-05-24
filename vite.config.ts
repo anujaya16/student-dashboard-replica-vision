@@ -5,16 +5,16 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  server: {
+  /*server: {
     host: "::",
     port: 8080,
-  },
+  },*/
   plugins: [
     react(),
-    //mode === 'development' &&
+    mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
-  base : "/student-dashboard-replica-vision",
+  
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import StudentSidebar from "@/components/StudentSidebar";
@@ -32,13 +31,13 @@ const Profile = () => {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full">
+      <div className="flex  h-screen w-full">
         <StudentSidebar />
         
         <div className="flex flex-col flex-1 overflow-hidden">
           <StudentHeader />
           
-          <main className="flex-1 overflow-y-auto p-6 bg-gray-50">
+          <main className="flex-1 overflow-y-auto p-6 bg-slate-900">
             <div className="max-w-7xl mx-auto">
               <h1 className="text-2xl font-bold mb-6">My Profile</h1>
               
@@ -51,7 +50,7 @@ const Profile = () => {
                           <AvatarImage src="/placeholder.svg" alt="Student Profile" />
                           <AvatarFallback className="text-4xl">JD</AvatarFallback>
                         </Avatar>
-                        <h2 className="mt-4 text-2xl font-bold">John Doe</h2>
+                        <h2 className="mt-4 text-2xl font-bold">Akila Fernando</h2>
                         <p className="text-muted-foreground">Student ID: STU-2023-001</p>
                         <Badge className="mt-3">Computer Science</Badge>
                         <Button className="mt-6 w-full">Edit Profile</Button>
@@ -60,15 +59,15 @@ const Profile = () => {
                       <div className="mt-8 space-y-4">
                         <div className="flex items-center">
                           <Mail className="h-4 w-4 mr-2 text-muted-foreground" />
-                          <span className="text-sm">john.doe@university.edu</span>
+                          <span className="text-sm">Akila.F@university.edu</span>
                         </div>
                         <div className="flex items-center">
                           <Phone className="h-4 w-4 mr-2 text-muted-foreground" />
-                          <span className="text-sm">(555) 123-4567</span>
+                          <span className="text-sm">(075) 123-4567</span>
                         </div>
                         <div className="flex items-center">
                           <MapPin className="h-4 w-4 mr-2 text-muted-foreground" />
-                          <span className="text-sm">123 Campus Street, University City</span>
+                          <span className="text-sm">127/D Bulugaha Junction/ ChinaTown</span>
                         </div>
                         <div className="flex items-center">
                           <Calendar className="h-4 w-4 mr-2 text-muted-foreground" />

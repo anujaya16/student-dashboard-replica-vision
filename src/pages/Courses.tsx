@@ -16,7 +16,7 @@ import { Search } from "lucide-react";
 const Courses = () => {
   // Mock course data
   const allCourses = [
-    { id: "1", title: "Introduction to Web Development", instructor: "Prof. Smith", coverImage: "https://source.unsplash.com/random/300x200?code", progress: 75, category: "Computer Science" },
+    { id: "1", title: "Introduction to Web Development", instructor: "Prof. Smith", coverImage: "public\photo.jpeg", progress: 75, category: "Computer Science" },
     { id: "2", title: "Data Science Fundamentals", instructor: "Dr. Johnson", coverImage: "https://source.unsplash.com/random/300x200?data", progress: 45, category: "Data Science" },
     { id: "3", title: "Psychology 101", instructor: "Prof. Williams", coverImage: "https://source.unsplash.com/random/300x200?brain", progress: 90, category: "Psychology" },
     { id: "4", title: "Linear Algebra", instructor: "Dr. Martinez", coverImage: "https://source.unsplash.com/random/300x200?math", progress: 60, category: "Mathematics" },

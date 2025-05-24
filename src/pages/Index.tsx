@@ -142,7 +142,7 @@ const Index = () => {
                 />
               </div>
               
-              <div className="grid gap-6 grid-cols-1 lg:grid-cols-3 mb-6">
+              {/*<div className="grid gap-6 grid-cols-1 lg:grid-cols-3 mb-6">
                 <div className="lg:col-span-2 bg-slate-800/50 border border-slate-700/30 rounded-lg p-6">
                   <h2 className="text-xl font-semibold mb-4 text-white">Performance Prediction Trend</h2>
                   <div className="h-[300px] w-full">
@@ -213,7 +213,7 @@ const Index = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </div>*/}
               
               <div className="grid gap-6 grid-cols-1 lg:grid-cols-3 mb-6">
                 <div className="lg:col-span-2">

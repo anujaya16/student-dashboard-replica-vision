@@ -8,7 +8,7 @@ interface CourseCardProps {
   id: string;
   title: string;
   instructor: string;
-  coverImage: string;
+  
   progress: number;
   category: string;
 }
@@ -17,18 +17,14 @@ export function CourseCard({
   id,
   title,
   instructor,
-  coverImage,
+  
   progress,
   category
 }: CourseCardProps) {
   return (
     <Card className="overflow-hidden hover:shadow-md transition-all duration-200 bg-slate-800/80 border-slate-700/30 text-white">
       <div className="aspect-video relative overflow-hidden">
-        <img
-          src={coverImage}
-          alt={title}
-          className="object-cover w-full h-full"
-        />
+        
         <Badge className="absolute top-2 right-2 bg-primary/80 text-white hover:bg-primary">{category}</Badge>
       </div>
       <CardHeader className="p-4">
