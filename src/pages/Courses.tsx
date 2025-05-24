@@ -16,12 +16,45 @@ import { Search } from "lucide-react";
 const Courses = () => {
   // Mock course data
   const allCourses = [
-    { id: "1", title: "Introduction to Web Development", instructor: "Prof. Smith", coverImage: "public\photo.jpeg", progress: 75, category: "Computer Science" },
-    { id: "2", title: "Data Science Fundamentals", instructor: "Dr. Johnson", coverImage: "https://source.unsplash.com/random/300x200?data", progress: 45, category: "Data Science" },
-    { id: "3", title: "Psychology 101", instructor: "Prof. Williams", coverImage: "https://source.unsplash.com/random/300x200?brain", progress: 90, category: "Psychology" },
-    { id: "4", title: "Linear Algebra", instructor: "Dr. Martinez", coverImage: "https://source.unsplash.com/random/300x200?math", progress: 60, category: "Mathematics" },
-    { id: "5", title: "Marketing Fundamentals", instructor: "Prof. Garcia", coverImage: "https://source.unsplash.com/random/300x200?marketing", progress: 30, category: "Business" },
-    { id: "6", title: "Introduction to Philosophy", instructor: "Dr. Adams", coverImage: "https://source.unsplash.com/random/300x200?philosophy", progress: 15, category: "Humanities" },
+    {
+      id: "1",
+      title: "Mathematics for Technology I",
+      description: "Fundamentals of mathematics for computer science",
+      instructor: "Dr. Rasika Rajapaksha",
+      students: 32,
+      credits: 3,
+      duration: "16 weeks",
+      category: "Computer Science",
+      level: "Beginner",
+      progress: 75,
+      coverImage: "https://source.unsplash.com/random/300x200?math"
+    },
+    {
+      id: "2",
+      title: "Advanced Mathematics",
+      description: "Calculus, linear algebra and differential equations",
+      instructor: "Prof. N. G. J. Dias",
+      students: 28,
+      credits: 4,
+      duration: "14 weeks",
+      category: "Computer Science",
+      level: "Advanced",
+      progress: 100,
+      coverImage: "https://source.unsplash.com/random/300x200?calculus"
+    },
+    {
+      id: "3",
+      title: "Networking I",
+      description: "Networking for computer science",
+      instructor: "Mr. L. Akash Tharuka",
+      students: 25,
+      credits: 4,
+      duration: "15 weeks",
+      category: "Computer Science",
+      level: "Intermediate",
+      progress: 45,
+      coverImage: "https://source.unsplash.com/random/300x200?network"
+    },
   ];
   
   const inProgressCourses = allCourses.filter(course => course.progress > 0 && course.progress < 100);
