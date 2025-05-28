@@ -59,9 +59,9 @@ const Index = () => {
 
   // Mock course data
   const courses = [
-    { id: "1", title: "Introduction to Web Development", instructor: "Prof. Smith", coverImage: "https://source.unsplash.com/random/300x200?code", progress: 75, category: "Computer Science" },
-    { id: "2", title: "Data Science Fundamentals", instructor: "Dr. Johnson", coverImage: "https://source.unsplash.com/random/300x200?data", progress: 45, category: "Data Science" },
-    { id: "3", title: "Psychology 101", instructor: "Prof. Williams", coverImage: "https://source.unsplash.com/random/300x200?brain", progress: 90, category: "Psychology" },
+    { id: "1", title: "Mathematics for Technology I", instructor: "Dr. Rasika Rajapaksha", coverImage: "https://source.unsplash.com/random/300x200?code", progress: 75, category: "Computer Science" },
+    { id: "2", title: "Advanced Mathematics", instructor: "Prof. N. G. J. Dias", coverImage: "https://source.unsplash.com/random/300x200?data", progress: 45, category: "Computer Science" },
+    { id: "3", title: "Networking I", instructor: "Mr. L. Akash Tharuka", coverImage: "https://source.unsplash.com/random/300x200?brain", progress: 90, category: "Computer Science" },
   ];
 
   // Recent activities data
@@ -113,7 +113,7 @@ const Index = () => {
                   }}
                 />
                 
-                <DashboardCard 
+                {/*<DashboardCard 
                   title="Learning Hours" 
                   icon={<GraduationCap />}
                   value="124"
@@ -122,7 +122,7 @@ const Index = () => {
                     value: "+1.2% improvement",
                     positive: true
                   }}
-                />
+                />*/}
                 
                 <DashboardCard 
                   title="At-Risk Subjects" 
@@ -135,12 +135,12 @@ const Index = () => {
                   }}
                 />
                 
-                <DashboardCard 
+                {/*<DashboardCard 
                   title="Upcoming Exams" 
                   icon={<CalendarDays />}
                   value="3"
                   subtitle="Across all departments"
-                />
+                />*/}
               </div>
               
               {/*<div className="grid gap-6 grid-cols-1 lg:grid-cols-3 mb-6">
@@ -226,7 +226,7 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <div>
+                {/*<div>
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl font-semibold text-white">Recent Activities</h2>
                     <a href="#" className="text-primary text-sm hover:underline">View all</a>
@@ -250,7 +250,7 @@ const Index = () => {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div>*/}
               </div>
               
               <div className="mb-6">
